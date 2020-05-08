@@ -31,15 +31,26 @@ int main(){
         //freopen("output.txt", "w", stdout);
     #endif
 
-    
     int t;
     cin >> t;
     while(t--){
-        int r;
-        cin >> r;
+        int n;
+        cin >> n;
+        map<ll, int> count;
+        set<ll> st;
 
-        cout << 1LL * 2 * r * r<< endl;
+        for (int i = 0; i < n; i++){
+            ll x;
+            cin >> x;
+            count[x]++;
+            st.insert(x);
+        }
+
+        for (auto x: st){
+            cout << x << ":"<< count[x]<< endl;
+        }
     }
+    
 
 
 
